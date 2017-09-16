@@ -116,3 +116,9 @@ Add
 ```
 
 to the `scripts` section in your `package.json`.
+
+### Run the build task
+
+```
+npm run bundle
+```
