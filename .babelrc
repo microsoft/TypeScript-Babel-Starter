@@ -1,15 +1,6 @@
 {
     "presets": [
-        [
-            "env",
-            {
-                "targets": {
-                    "browsers": [
-                        "ie >= 8"
-                    ]
-                }
-            }
-        ],
+        "env",
         "typescript"
     ],
     "plugins": [
