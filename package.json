@@ -1,0 +1,15 @@
+{
+  "name": "babel-typescript-sample",
+  "version": "0.7.0",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "babel src/**/* --out-dir lib --extensions \".ts,.tsx\""
+  },
+  "devDependencies": {
+    "babel-cli": "^7.0.0-beta.0",
+    "babel-plugin-transform-class-properties": "^7.0.0-beta.0",
+    "babel-plugin-transform-object-rest-spread": "^7.0.0-beta.0",
+    "babel-preset-env": "^2.0.0-beta.0",
+    "babel-preset-typescript": "^7.0.0-beta.0"
+  }
+}

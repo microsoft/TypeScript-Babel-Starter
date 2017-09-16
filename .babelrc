@@ -1,0 +1,19 @@
+{
+    "presets": [
+        [
+            "env",
+            {
+                "targets": {
+                    "browsers": [
+                        "ie >= 8"
+                    ]
+                }
+            }
+        ],
+        "typescript"
+    ],
+    "plugins": [
+        "transform-object-rest-spread",
+        "transform-class-properties"
+    ]
+}
