@@ -4,7 +4,7 @@
   "license": "Apache-2.0",
   "scripts": {
     "type-check": "tsc",
-    "build": "babel src/**/* --out-dir lib --extensions \".ts,.tsx\""
+    "build": "babel src --out-dir lib --extensions \".ts,.tsx\""
   },
   "devDependencies": {
     "babel-cli": "^7.0.0-beta.0",
