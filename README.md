@@ -43,11 +43,11 @@ Then copy the `.babelrc`.
 
 ### Install your dependencies
 
-Install the [babel-react-preset](https://babeljs.io/docs/plugins/preset-react/) package as well as React and its type declarations
+Install the [babel-react-preset](https://babeljs.io/docs/plugins/preset-react/) package as well as React, ReactDOM, and its type declarations
 
 ```sh
+npm install --save react react-dom @types/react @types/react-dom
 npm install --save-dev babel-preset-react@7.0.0-beta.0
-npm install --save-dev react @types/react
 ```
 
 ### Update `.babelrc`
@@ -56,7 +56,7 @@ Then add `"react"` as one of the presets in your `.babelrc`.
 
 ### Update `tsconfig.json`
 
-Update your `tsconfig.json` to set `"jsx"` to `"preserve"`.
+Update your `tsconfig.json` to set `"jsx"` to `"react"`.
 
 ### Use a `.tsx` file
 
@@ -64,7 +64,7 @@ Make sure that any files that contain JSX use the `.tsx` extension.
 To get going quickly, just rename `src/index.ts` to `src/index.tsx`, and add the following line to the bottom:
 
 ```ts
-export let z = <div />;
+export let z = <div>Hello world!</div>;
 ```
 
 ## Mixing `.js` and `.ts`
