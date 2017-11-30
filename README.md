@@ -22,7 +22,13 @@ npm run type-check
 ## Install your dependencies
 
 ```sh
-npm install --save-dev babel-cli@7.0.0-beta.0 babel-plugin-transform-class-properties@7.0.0-beta.0 babel-plugin-transform-object-rest-spread@7.0.0-beta.0 babel-preset-env@2.0.0-beta.0 babel-preset-typescript@7.0.0-beta.0 typescript@2.5.2
+npm install --save-dev typescript@2.6.2
+npm install --save-dev @babel/core@7.0.0-beta.32
+npm install --save-dev @babel/cli@7.0.0-beta.32
+npm install --save-dev @babel/plugin-proposal-class-properties@7.0.0-beta.32
+npm install --save-dev @babel/plugin-proposal-object-rest-spread@7.0.0-beta.32
+npm install --save-dev @babel/preset-env@7.0.0-beta.32
+npm install --save-dev @babel/preset-typescript@7.0.0-beta.32
 ```
 
 ## Create your `tsconfig.json`
@@ -43,11 +49,11 @@ Then copy the `.babelrc`.
 
 ### Install your dependencies
 
-Install the [babel-react-preset](https://babeljs.io/docs/plugins/preset-react/) package as well as React, ReactDOM, and its type declarations
+Install the [babel-react-preset](https://babeljs.io/docs/plugins/preset-react/) package as well as React, ReactDOM, and their respective type declarations
 
 ```sh
 npm install --save react react-dom @types/react @types/react-dom
-npm install --save-dev babel-preset-react@7.0.0-beta.0
+npm install --save-dev @babel/preset-react@7.0.0-beta.32
 ```
 
 ### Update `.babelrc`
