@@ -21,6 +21,8 @@ npm run type-check
 
 ## Install your dependencies
 
+Either run the following:
+
 ```sh
 npm install --save-dev typescript@2.6.2
 npm install --save-dev @babel/core@7.0.0-beta.32
@@ -29,6 +31,20 @@ npm install --save-dev @babel/plugin-proposal-class-properties@7.0.0-beta.32
 npm install --save-dev @babel/plugin-proposal-object-rest-spread@7.0.0-beta.32
 npm install --save-dev @babel/preset-env@7.0.0-beta.32
 npm install --save-dev @babel/preset-typescript@7.0.0-beta.32
+```
+
+or make sure that you add the appropriate entries to your `package.json` and run `npm install`:
+
+```json
+"devDependencies": {
+    "@babel/cli": "^7.0.0-beta.32",
+    "@babel/core": "^7.0.0-beta.32",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.32",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.32",
+    "@babel/preset-env": "^7.0.0-beta.32",
+    "@babel/preset-typescript": "^7.0.0-beta.32",
+    "typescript": "^2.6.2"
+}
 ```
 
 ## Create your `tsconfig.json`
@@ -41,7 +57,20 @@ tsc --init --noEmit --target esnext --allowSyntheticDefaultImports
 
 ## Create your `.babelrc`
 
-Then copy the `.babelrc`.
+Then copy the `.babelrc` in this repo, or the below:
+
+```json
+{
+    "presets": [
+        "@babel/env",
+        "@babel/typescript"
+    ],
+    "plugins": [
+        "@babel/proposal-class-properties",
+        "@babel/proposal-object-rest-spread"
+    ]
+}
+```
 
 # How do I change it?
 
@@ -82,7 +111,7 @@ Set the `"allowJs"` compiler option to `true` in `tsconfig.json`.
 ### Install your dependencies
 
 ```sh
-npm install --save-dev babel-loader
+npm install --save-dev webpack babel-loader
 ```
 
 ### Create a `webpack.config.js`
