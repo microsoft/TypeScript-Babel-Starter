@@ -49,7 +49,7 @@ Then copy the `.babelrc`.
 
 ### Install your dependencies
 
-Install the [babel-react-preset](https://babeljs.io/docs/plugins/preset-react/) package as well as React, ReactDOM, and their respective type declarations
+Install the [@babel/preset-react](https://www.npmjs.com/package/@babel/preset-react) package as well as React, ReactDOM, and their respective type declarations
 
 ```sh
 npm install --save react react-dom @types/react @types/react-dom
