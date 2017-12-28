@@ -17,6 +17,12 @@ npm run build
 npm run type-check
 ```
 
+And to run in `--watch` mode:
+
+```sh
+npm run type-check -- --watch
+```
+
 # How would I set this up myself?
 
 ## Install your dependencies
@@ -33,7 +39,7 @@ npm install --save-dev @babel/preset-env@7.0.0-beta.32
 npm install --save-dev @babel/preset-typescript@7.0.0-beta.32
 ```
 
-or make sure that you add the appropriate entries to your `package.json` and run `npm install`:
+or make sure that you add the appropriate `"devDependencies"` entries to your `package.json` and run `npm install`:
 
 ```json
 "devDependencies": {
@@ -69,6 +75,17 @@ Then copy the `.babelrc` in this repo, or the below:
         "@babel/proposal-class-properties",
         "@babel/proposal-object-rest-spread"
     ]
+}
+```
+
+## Set up your build tasks
+
+Add the following to the `"scripts"` section of your `package.json`
+
+```json
+"scripts": {
+    "build": "babel src --out-dir lib --extensions \".ts,.tsx\"",
+    "type-check": "tsc"
 }
 ```
 
