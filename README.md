@@ -58,7 +58,7 @@ or make sure that you add the appropriate `"devDependencies"` entries to your `p
 Then run
 
 ```sh
-tsc --init --noEmit --target esnext --allowSyntheticDefaultImports
+tsc --init --noEmit --allowJs --allowSyntheticDefaultImports --target esnext
 ```
 
 ## Create your `.babelrc`
