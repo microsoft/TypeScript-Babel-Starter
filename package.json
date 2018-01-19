@@ -1,7 +1,7 @@
 {
   "name": "babel-typescript-sample",
   "version": "0.7.0",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "scripts": {
     "type-check": "tsc",
     "build": "babel src --out-dir lib --extensions \".ts,.tsx\""
