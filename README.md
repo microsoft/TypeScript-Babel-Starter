@@ -3,7 +3,9 @@
 # What is this?
 
 This is a small sample repository that uses Babel to transform TypeScript to plain JavaScript, and uses TypeScript for type-checking.
-For simplicity, it uses `babel-cli`.
+This README will also explain step-by-step how you can set up this repository so you can understand how each component fits together.
+
+For simplicity, we've used `babel-cli` with a bare-bones TypeScript setup, but we'll also demonstrate integration with JSX/React, as well as adding Webpack into the mix.
 
 # How do I use it?
 
@@ -120,10 +122,6 @@ To get going quickly, just rename `src/index.ts` to `src/index.tsx`, and add the
 ```ts
 export let z = <div>Hello world!</div>;
 ```
-
-## Mixing `.js` and `.ts`
-
-Set the `"allowJs"` compiler option to `true` in `tsconfig.json`.
 
 ## Using Webpack
 
