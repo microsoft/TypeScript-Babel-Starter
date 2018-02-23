@@ -108,7 +108,7 @@ npm install --save-dev @babel/preset-react@7.0.0-beta.32
 
 ### Update `.babelrc`
 
-Then add `"react"` as one of the presets in your `.babelrc`.
+Then add `"@babel/react"` as one of the presets in your `.babelrc`.
 
 ### Update `tsconfig.json`
 
@@ -117,9 +117,10 @@ Update your `tsconfig.json` to set `"jsx"` to `"react"`.
 ### Use a `.tsx` file
 
 Make sure that any files that contain JSX use the `.tsx` extension.
-To get going quickly, just rename `src/index.ts` to `src/index.tsx`, and add the following line to the bottom:
+To get going quickly, just rename `src/index.ts` to `src/index.tsx`, and add the following lines to the bottom:
 
 ```ts
+import React from 'react';
 export let z = <div>Hello world!</div>;
 ```
 
@@ -128,7 +129,7 @@ export let z = <div>Hello world!</div>;
 ### Install your dependencies
 
 ```sh
-npm install --save-dev webpack babel-loader
+npm install --save-dev webpack babel-loader@8.0.0-beta.0
 ```
 
 ### Create a `webpack.config.js`
