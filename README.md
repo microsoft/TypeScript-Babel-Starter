@@ -36,26 +36,26 @@ npm run type-check -- --watch
 Either run the following:
 
 ```sh
-npm install --save-dev typescript@2.6.2
-npm install --save-dev @babel/core@7.0.0-beta.32
-npm install --save-dev @babel/cli@7.0.0-beta.32
-npm install --save-dev @babel/plugin-proposal-class-properties@7.0.0-beta.32
-npm install --save-dev @babel/plugin-proposal-object-rest-spread@7.0.0-beta.32
-npm install --save-dev @babel/preset-env@7.0.0-beta.32
-npm install --save-dev @babel/preset-typescript@7.0.0-beta.32
+npm install --save-dev typescript@2.7.2
+npm install --save-dev @babel/core@7.0.0-beta.40
+npm install --save-dev @babel/cli@7.0.0-beta.40
+npm install --save-dev @babel/plugin-proposal-class-properties@7.0.0-beta.40
+npm install --save-dev @babel/plugin-proposal-object-rest-spread@7.0.0-beta.40
+npm install --save-dev @babel/preset-env@7.0.0-beta.40
+npm install --save-dev @babel/preset-typescript@7.0.0-beta.40
 ```
 
 or make sure that you add the appropriate `"devDependencies"` entries to your `package.json` and run `npm install`:
 
 ```json
 "devDependencies": {
-    "@babel/cli": "^7.0.0-beta.32",
-    "@babel/core": "^7.0.0-beta.32",
-    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.32",
-    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.32",
-    "@babel/preset-env": "^7.0.0-beta.32",
-    "@babel/preset-typescript": "^7.0.0-beta.32",
-    "typescript": "^2.6.2"
+    "@babel/cli": "^7.0.0-beta.40",
+    "@babel/core": "^7.0.0-beta.40",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.40",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.40",
+    "@babel/preset-env": "^7.0.0-beta.40",
+    "@babel/preset-typescript": "^7.0.0-beta.40",
+    "typescript": "^2.7.2"
 }
 ```
 
@@ -64,7 +64,7 @@ or make sure that you add the appropriate `"devDependencies"` entries to your `p
 Then run
 
 ```sh
-tsc --init --noEmit --allowJs --allowSyntheticDefaultImports --target esnext
+tsc --init --declaration --allowJs --allowSyntheticDefaultImports --target esnext
 ```
 
 ## Create your `.babelrc`
@@ -90,8 +90,8 @@ Add the following to the `"scripts"` section of your `package.json`
 
 ```json
 "scripts": {
-    "build": "babel src --out-dir lib --extensions \".ts,.tsx\"",
-    "type-check": "tsc"
+    "build": "tsc --emitDeclarationOnly && babel src --out-dir lib --extensions \".ts,.tsx\"",
+    "type-check": "tsc --noEmit"
 }
 ```
 
@@ -105,7 +105,7 @@ Install the [@babel/preset-react](https://www.npmjs.com/package/@babel/preset-re
 
 ```sh
 npm install --save react react-dom @types/react @types/react-dom
-npm install --save-dev @babel/preset-react@7.0.0-beta.32
+npm install --save-dev @babel/preset-react@7.0.0-beta.40
 ```
 
 ### Update `.babelrc`
