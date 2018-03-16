@@ -37,24 +37,24 @@ Either run the following:
 
 ```sh
 npm install --save-dev typescript@2.6.2
-npm install --save-dev @babel/core@7.0.0-beta.32
-npm install --save-dev @babel/cli@7.0.0-beta.32
-npm install --save-dev @babel/plugin-proposal-class-properties@7.0.0-beta.32
-npm install --save-dev @babel/plugin-proposal-object-rest-spread@7.0.0-beta.32
-npm install --save-dev @babel/preset-env@7.0.0-beta.32
-npm install --save-dev @babel/preset-typescript@7.0.0-beta.32
+npm install --save-dev @babel/core@7.0.0-beta.42
+npm install --save-dev @babel/cli@7.0.0-beta.42
+npm install --save-dev @babel/plugin-proposal-class-properties@7.0.0-beta.42
+npm install --save-dev @babel/plugin-proposal-object-rest-spread@7.0.0-beta.42
+npm install --save-dev @babel/preset-env@7.0.0-beta.42
+npm install --save-dev @babel/preset-typescript@7.0.0-beta.42
 ```
 
 or make sure that you add the appropriate `"devDependencies"` entries to your `package.json` and run `npm install`:
 
 ```json
 "devDependencies": {
-    "@babel/cli": "^7.0.0-beta.32",
-    "@babel/core": "^7.0.0-beta.32",
-    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.32",
-    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.32",
-    "@babel/preset-env": "^7.0.0-beta.32",
-    "@babel/preset-typescript": "^7.0.0-beta.32",
+    "@babel/cli": "^7.0.0-beta.42",
+    "@babel/core": "^7.0.0-beta.42",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.42",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.42",
+    "@babel/preset-env": "^7.0.0-beta.42",
+    "@babel/preset-typescript": "^7.0.0-beta.42",
     "typescript": "^2.6.2"
 }
 ```
