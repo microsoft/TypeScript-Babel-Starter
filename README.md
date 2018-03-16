@@ -36,7 +36,7 @@ npm run type-check -- --watch
 Either run the following:
 
 ```sh
-npm install --save-dev typescript@2.6.2
+npm install --save-dev typescript@2.7.1
 npm install --save-dev @babel/core@7.0.0-beta.32
 npm install --save-dev @babel/cli@7.0.0-beta.32
 npm install --save-dev @babel/plugin-proposal-class-properties@7.0.0-beta.32
@@ -55,7 +55,7 @@ or make sure that you add the appropriate `"devDependencies"` entries to your `p
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.32",
     "@babel/preset-env": "^7.0.0-beta.32",
     "@babel/preset-typescript": "^7.0.0-beta.32",
-    "typescript": "^2.6.2"
+    "typescript": "^2.7.1"
 }
 ```
 
