@@ -107,7 +107,7 @@ Install the [@babel/preset-react](https://www.npmjs.com/package/@babel/preset-re
 
 ```sh
 npm install --save react react-dom @types/react @types/react-dom
-npm install --save-dev @babel/preset-react@7.0.0-beta.40
+npm install --save-dev @babel/preset-react@7.0.0-beta.42
 ```
 
 ### Update `.babelrc`
