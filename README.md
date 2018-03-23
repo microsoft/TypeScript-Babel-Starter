@@ -64,8 +64,10 @@ or make sure that you add the appropriate `"devDependencies"` entries to your `p
 Then run
 
 ```sh
-tsc --init --declaration --allowJs --allowSyntheticDefaultImports --target esnext
+tsc --init --declaration --allowSyntheticDefaultImports --target esnext --outDir lib 
 ```
+
+_**Note:** Instead of `--outDir` can be used `--declarationDir` which specifies an output directory for generated declaration files._
 
 ## Create your `.babelrc`
 
