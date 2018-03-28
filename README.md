@@ -67,8 +67,6 @@ Then run
 tsc --init --declaration --allowSyntheticDefaultImports --target esnext --outDir lib 
 ```
 
-> **Note:** TypeScript also provides a `--declarationDir` option which specifies an output directory for generated declaration files (`.d.ts` files). For our uses where `--emitDeclarationOnly` is turned on, `--outDir` works equivalently.
-
 ## Create your `.babelrc`
 
 Then copy the `.babelrc` in this repo, or the below:
