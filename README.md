@@ -37,25 +37,25 @@ Either run the following:
 
 ```sh
 npm install --save-dev typescript@2.7.2
-npm install --save-dev @babel/core@7.0.0-beta.42
-npm install --save-dev @babel/cli@7.0.0-beta.42
-npm install --save-dev @babel/plugin-proposal-class-properties@7.0.0-beta.42
-npm install --save-dev @babel/plugin-proposal-object-rest-spread@7.0.0-beta.42
-npm install --save-dev @babel/preset-env@7.0.0-beta.42
-npm install --save-dev @babel/preset-typescript@7.0.0-beta.42
+npm install --save-dev @babel/core@7.0.0-beta.44
+npm install --save-dev @babel/cli@7.0.0-beta.44
+npm install --save-dev @babel/plugin-proposal-class-properties@7.0.0-beta.44
+npm install --save-dev @babel/plugin-proposal-object-rest-spread@7.0.0-beta.44
+npm install --save-dev @babel/preset-env@7.0.0-beta.44
+npm install --save-dev @babel/preset-typescript@7.0.0-beta.44
 ```
 
 or make sure that you add the appropriate `"devDependencies"` entries to your `package.json` and run `npm install`:
 
 ```json
 "devDependencies": {
-    "@babel/cli": "^7.0.0-beta.42",
-    "@babel/core": "^7.0.0-beta.42",
-    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.42",
-    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.42",
-    "@babel/preset-env": "^7.0.0-beta.42",
-    "@babel/preset-typescript": "^7.0.0-beta.42",
-    "typescript": "^2.7.2"
+    "@babel/cli": "^7.0.0-beta.44",
+    "@babel/core": "^7.0.0-beta.44",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.44",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.44",
+    "@babel/preset-env": "^7.0.0-beta.44",
+    "@babel/preset-typescript": "^7.0.0-beta.44",
+    "typescript": "^2.8.1"
 }
 ```
 
@@ -64,7 +64,7 @@ or make sure that you add the appropriate `"devDependencies"` entries to your `p
 Then run
 
 ```sh
-tsc --init --declaration --allowSyntheticDefaultImports --target esnext --outDir lib 
+tsc --init --declaration --allowSyntheticDefaultImports --target esnext --outDir lib
 ```
 
 ## Create your `.babelrc`
@@ -105,7 +105,7 @@ Install the [@babel/preset-react](https://www.npmjs.com/package/@babel/preset-re
 
 ```sh
 npm install --save react react-dom @types/react @types/react-dom
-npm install --save-dev @babel/preset-react@7.0.0-beta.42
+npm install --save-dev @babel/preset-react@7.0.0-beta.44
 ```
 
 ### Update `.babelrc`
@@ -131,7 +131,7 @@ export let z = <div>Hello world!</div>;
 ### Install your dependencies
 
 ```sh
-npm install --save-dev webpack babel-loader@8.0.0-beta.0
+npm install --save-dev webpack babel-loader@8.0.0-beta.2
 ```
 
 ### Create a `webpack.config.js`
