@@ -36,26 +36,26 @@ npm run type-check -- --watch
 Either run the following:
 
 ```sh
-npm install --save-dev typescript@2.9.1
-npm install --save-dev @babel/core@7.0.0-beta.49
-npm install --save-dev @babel/cli@7.0.0-beta.49
-npm install --save-dev @babel/plugin-proposal-class-properties@7.0.0-beta.49
-npm install --save-dev @babel/plugin-proposal-object-rest-spread@7.0.0-beta.49
-npm install --save-dev @babel/preset-env@7.0.0-beta.49
-npm install --save-dev @babel/preset-typescript@7.0.0-beta.49
+npm install --save-dev typescript@2.9.2
+npm install --save-dev @babel/core@7.0.0-beta.51
+npm install --save-dev @babel/cli@7.0.0-beta.51
+npm install --save-dev @babel/plugin-proposal-class-properties@7.0.0-beta.51
+npm install --save-dev @babel/plugin-proposal-object-rest-spread@7.0.0-beta.51
+npm install --save-dev @babel/preset-env@7.0.0-beta.51
+npm install --save-dev @babel/preset-typescript@7.0.0-beta.51
 ```
 
 or make sure that you add the appropriate `"devDependencies"` entries to your `package.json` and run `npm install`:
 
 ```json
 "devDependencies": {
-    "@babel/cli": "^7.0.0-beta.49",
-    "@babel/core": "^7.0.0-beta.49",
-    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.49",
-    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.49",
-    "@babel/preset-env": "^7.0.0-beta.49",
-    "@babel/preset-typescript": "^7.0.0-beta.49",
-    "typescript": "^2.9.1"
+    "@babel/cli": "^7.0.0-beta.51",
+    "@babel/core": "^7.0.0-beta.51",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.51",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.51",
+    "@babel/preset-env": "^7.0.0-beta.51",
+    "@babel/preset-typescript": "^7.0.0-beta.51",
+    "typescript": "^2.9.2"
 }
 ```
 
@@ -108,7 +108,7 @@ Install the [@babel/preset-react](https://www.npmjs.com/package/@babel/preset-re
 
 ```sh
 npm install --save react react-dom @types/react @types/react-dom
-npm install --save-dev @babel/preset-react@7.0.0-beta.49
+npm install --save-dev @babel/preset-react@7.0.0-beta.51
 ```
 
 ### Update `.babelrc`
