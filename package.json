@@ -3,8 +3,10 @@
   "version": "0.7.0",
   "license": "MIT",
   "scripts": {
-    "type-check": "tsc --noEmit",
-    "build": "tsc --emitDeclarationOnly && babel src --out-dir lib --extensions \".ts,.tsx\""
+    "watch": "webpack-serve",
+    "build:dev": "NODE_ENV=development webpack",
+    "build:prod": "NODE_ENV=production webpack",
+    "type-check": "tsc --noEmit"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.49",
@@ -12,7 +14,11 @@
     "@babel/plugin-proposal-class-properties": "^7.0.0-beta.49",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.49",
     "@babel/preset-env": "^7.0.0-beta.49",
+    "@babel/preset-react": "^7.0.0-beta.49",
     "@babel/preset-typescript": "^7.0.0-beta.49",
-    "typescript": "^2.9.1"
+    "awesome-typescript-loader": "^5.2.0",
+    "babel-loader": "^8.0.0-beta.2",
+    "typescript": "^2.9.1",
+    "webpack": "^4.12.0"
   }
 }
