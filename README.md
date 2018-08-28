@@ -26,7 +26,7 @@ npm run type-check
 And to run in `--watch` mode:
 
 ```sh
-npm run type-check -- --watch
+npm run type-check:watch
 ```
 
 # How would I set this up myself?
