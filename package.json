@@ -3,10 +3,10 @@
   "version": "0.7.0",
   "license": "MIT",
   "scripts": {
-    "type-check": "tsc --noEmit",
-    "build-types": "tsc --emitDeclarationOnly",
-    "build-js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
-    "build": "npm run build-types && npm run build-js"
+      "type-check": "tsc --noEmit",
+      "build": "npm run build-types && npm run build-js",
+      "build-types": "tsc --emitDeclarationOnly",
+      "build-js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
