@@ -36,26 +36,26 @@ npm run type-check:watch
 Either run the following:
 
 ```sh
-npm install --save-dev typescript@2.9.1
-npm install --save-dev @babel/core@7.0.0-beta.49
-npm install --save-dev @babel/cli@7.0.0-beta.49
-npm install --save-dev @babel/plugin-proposal-class-properties@7.0.0-beta.49
-npm install --save-dev @babel/plugin-proposal-object-rest-spread@7.0.0-beta.49
-npm install --save-dev @babel/preset-env@7.0.0-beta.49
-npm install --save-dev @babel/preset-typescript@7.0.0-beta.49
+npm install --save-dev typescript@3.0.1
+npm install --save-dev @babel/core@7.0.0
+npm install --save-dev @babel/cli@7.0.0
+npm install --save-dev @babel/plugin-proposal-class-properties@7.0.0
+npm install --save-dev @babel/plugin-proposal-object-rest-spread@7.0.0
+npm install --save-dev @babel/preset-env@7.0.0
+npm install --save-dev @babel/preset-typescript@7.0.0
 ```
 
 or make sure that you add the appropriate `"devDependencies"` entries to your `package.json` and run `npm install`:
 
 ```json
 "devDependencies": {
-    "@babel/cli": "^7.0.0-beta.49",
-    "@babel/core": "^7.0.0-beta.49",
-    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.49",
-    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.49",
-    "@babel/preset-env": "^7.0.0-beta.49",
-    "@babel/preset-typescript": "^7.0.0-beta.49",
-    "typescript": "^2.9.1"
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-typescript": "^7.0.0",
+    "typescript": "^3.0.1"
 }
 ```
 
@@ -93,8 +93,10 @@ Add the following to the `"scripts"` section of your `package.json`
 
 ```json
 "scripts": {
-    "build": "tsc --emitDeclarationOnly && babel src --out-dir lib --extensions \".ts,.tsx\"",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "build": "npm run build-types && npm run build-js",
+    "build-types": "tsc --emitDeclarationOnly",
+    "build-js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline"
 }
 ```
 
@@ -108,7 +110,7 @@ Install the [@babel/preset-react](https://www.npmjs.com/package/@babel/preset-re
 
 ```sh
 npm install --save react react-dom @types/react @types/react-dom
-npm install --save-dev @babel/preset-react@7.0.0-beta.49
+npm install --save-dev @babel/preset-react@7.0.0
 ```
 
 ### Update `.babelrc`
@@ -134,7 +136,7 @@ export let z = <div>Hello world!</div>;
 ### Install your dependencies
 
 ```sh
-npm install --save-dev webpack babel-loader@8.0.0-beta.2
+npm install --save-dev webpack babel-loader@8.0.0
 ```
 
 ### Create a `webpack.config.js`
