@@ -1,7 +1,5 @@
 # TypeScript-Babel-Starter
 
-**Note**: This quick start repository uses a pre-release version of Babel. While you should be aware that some of the dependencies here are in flux, feel free to try it out!
-
 # What is this?
 
 This is a small sample repository that uses Babel to transform TypeScript to plain JavaScript, and uses TypeScript for type-checking.
