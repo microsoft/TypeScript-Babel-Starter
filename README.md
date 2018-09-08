@@ -94,6 +94,7 @@ Add the following to the `"scripts"` section of your `package.json`
 ```json
 "scripts": {
     "type-check": "tsc --noEmit",
+    "type-check-watch": "npm run type-check -- --watch", 
     "build": "npm run build-types && npm run build-js",
     "build-types": "tsc --emitDeclarationOnly",
     "build-js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline"
