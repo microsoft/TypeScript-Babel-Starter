@@ -26,7 +26,7 @@ npm run type-check
 And to run in `--watch` mode:
 
 ```sh
-npm run type-check-watch
+npm run type-check:watch
 ```
 
 # How would I set this up myself?
@@ -94,10 +94,10 @@ Add the following to the `"scripts"` section of your `package.json`
 ```json
 "scripts": {
     "type-check": "tsc --noEmit",
-    "type-check-watch": "npm run type-check -- --watch", 
-    "build": "npm run build-types && npm run build-js",
-    "build-types": "tsc --emitDeclarationOnly",
-    "build-js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline"
+    "type-check:watch": "npm run type-check -- --watch",
+    "build": "npm run build:types && npm run build:js",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline"
 }
 ```
 
