@@ -158,7 +158,7 @@ module.exports = {
     module: {
         rules: [{
             // Include ts, tsx, and js files.
-            test: /\.(tsx?)|(js)$/,
+            test: /\.(tsx?)$|(js)$/,
             exclude: /node_modules/,
             loader: 'babel-loader',
         }],
