@@ -34,26 +34,26 @@ npm run type-check:watch
 Either run the following:
 
 ```sh
-npm install --save-dev typescript@3.0.1
-npm install --save-dev @babel/core@7.0.0
-npm install --save-dev @babel/cli@7.0.0
-npm install --save-dev @babel/plugin-proposal-class-properties@7.0.0
+npm install --save-dev typescript@3.1.3
+npm install --save-dev @babel/core@7.1.2
+npm install --save-dev @babel/cli@7.1.2
+npm install --save-dev @babel/plugin-proposal-class-properties@7.1.0
 npm install --save-dev @babel/plugin-proposal-object-rest-spread@7.0.0
-npm install --save-dev @babel/preset-env@7.0.0
-npm install --save-dev @babel/preset-typescript@7.0.0
+npm install --save-dev @babel/preset-env@7.1.0
+npm install --save-dev @babel/preset-typescript@7.1.0
 ```
 
 or make sure that you add the appropriate `"devDependencies"` entries to your `package.json` and run `npm install`:
 
 ```json
 "devDependencies": {
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.0",
-    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/preset-typescript": "^7.0.0",
-    "typescript": "^3.0.1"
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-typescript": "^7.1.0",
+    "typescript": "^3.1.3"
 }
 ```
 
@@ -135,7 +135,7 @@ export let z = <div>Hello world!</div>;
 ### Install your dependencies
 
 ```sh
-npm install --save-dev webpack babel-loader@8.0.0
+npm install --save-dev webpack babel-loader@8.0.4
 ```
 
 ### Create a `webpack.config.js`
@@ -172,6 +172,52 @@ Add
 
 ```json
 "bundle": "webpack"
+```
+
+to the `scripts` section in your `package.json`.
+
+### Run the build task
+
+```
+npm run bundle
+```
+
+## Using Rollup
+> Full example available [**here**](https://github.com/a-tarasyuk/rollup-typescript-babel)
+
+### Install your dependencies
+
+```sh
+npm install --save-dev rollup rollup-plugin-babel@latest
+```
+
+### Create a `rollup.config.js`
+
+Create a `rollup.config.js` at the root of this project with the following contents:
+
+```js
+import babel from 'rollup-plugin-babel';
+import pkg from './package.json';
+
+export default {
+    input: './src/index.ts',
+    plugins: [
+        babel({ extensions: ['.ts'], exclude: ['dist/**', 'node_modules/**'] }),
+    ],
+    output: [
+        { file: pkg.main, format: 'cjs' },
+        { file: pkg.module, format: 'es' },
+        { file: pkg.browser, format: 'iife', name: 'RollupTypeScriptBabel' },
+    ],
+};
+```
+
+### Create a build task
+
+Add
+
+```json
+"bundle": "rollup -c"
 ```
 
 to the `scripts` section in your `package.json`.
