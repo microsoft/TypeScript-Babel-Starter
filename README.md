@@ -218,7 +218,7 @@ export default {
 
 Add
 
-```json5
+```json
 "bundle": "rollup -c"
 ```
 
