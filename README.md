@@ -5,7 +5,8 @@
 This is a small sample repository that uses Babel to transform TypeScript to plain JavaScript, and uses TypeScript for type-checking.
 This README will also explain step-by-step how you can set up this repository so you can understand how each component fits together.
 
-For simplicity, we've used `babel-cli` with a bare-bones TypeScript setup, but we'll also demonstrate integration with JSX/React, as well as adding Webpack into the mix.
+For simplicity, we've used `babel-cli` with a bare-bones TypeScript setup, but we'll also demonstrate integration with JSX/React, as well as adding bundlers into the mix.
+Specifically, we'll show off integration with Webpack for if you're deploying an application, and Rollup for if you're producing a library.
 
 # How do I use it?
 
@@ -183,6 +184,7 @@ npm run bundle
 ```
 
 ## Using Rollup
+
 > Full example available [**here**](https://github.com/a-tarasyuk/rollup-typescript-babel)
 
 ### Install your dependencies
@@ -202,7 +204,7 @@ import pkg from './package.json';
 export default {
     input: './src/index.ts',
     plugins: [
-        babel({ extensions: ['.ts'], exclude: ['dist/**', 'node_modules/**'] }),
+        babel({ extensions: ['.ts', '.tsx'], exclude: ['dist/**', 'node_modules/**'] }),
     ],
     output: [
         { file: pkg.main, format: 'cjs' },
@@ -216,7 +218,7 @@ export default {
 
 Add
 
-```json
+```json5
 "bundle": "rollup -c"
 ```
 
