@@ -179,7 +179,7 @@ to the `scripts` section in your `package.json`.
 
 ### Run the build task
 
-```
+```sh
 npm run bundle
 ```
 
@@ -226,6 +226,6 @@ to the `scripts` section in your `package.json`.
 
 ### Run the build task
 
-```
+```sh
 npm run bundle
 ```
