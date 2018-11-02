@@ -35,7 +35,7 @@ npm run type-check:watch
 Either run the following:
 
 ```sh
-npm install --save-dev typescript@3.1.3
+npm install --save-dev typescript@3.1.5
 npm install --save-dev @babel/core@7.1.2
 npm install --save-dev @babel/cli@7.1.2
 npm install --save-dev @babel/plugin-proposal-class-properties@7.1.0
@@ -54,7 +54,7 @@ or make sure that you add the appropriate `"devDependencies"` entries to your `p
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-typescript": "^7.1.0",
-    "typescript": "^3.1.3"
+    "typescript": "^3.1.5"
 }
 ```
 
@@ -103,6 +103,7 @@ Add the following to the `"scripts"` section of your `package.json`
 # How do I change it?
 
 ## Using JSX (and React)
+> Full example available [**here**](https://github.com/a-tarasyuk/react-webpack-typescript-babel)
 
 ### Install your dependencies
 
@@ -133,10 +134,12 @@ export let z = <div>Hello world!</div>;
 
 ## Using Webpack
 
+> Full example available [**here**](https://github.com/a-tarasyuk/webpack-typescript-babel)
+
 ### Install your dependencies
 
 ```sh
-npm install --save-dev webpack babel-loader@8.0.4
+npm install --save-dev webpack webpack-cli babel-loader@8.0.4
 ```
 
 ### Create a `webpack.config.js`
