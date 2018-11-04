@@ -77,7 +77,7 @@ Then copy the `.babelrc` in this repo, or the below:
 {
     "presets": [
         "@babel/env",
-        "@babel/typescript"
+        "@babel/preset-typescript"
     ],
     "plugins": [
         "@babel/proposal-class-properties",
