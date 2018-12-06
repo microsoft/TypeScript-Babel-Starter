@@ -35,12 +35,12 @@ npm run type-check:watch
 Either run the following:
 
 ```sh
-npm install --save-dev typescript@3.1.5
-npm install --save-dev @babel/core@7.1.2
-npm install --save-dev @babel/cli@7.1.2
-npm install --save-dev @babel/plugin-proposal-class-properties@7.1.0
-npm install --save-dev @babel/plugin-proposal-object-rest-spread@7.0.0
-npm install --save-dev @babel/preset-env@7.1.0
+npm install --save-dev typescript@3.2.2
+npm install --save-dev @babel/core@7.2.0
+npm install --save-dev @babel/cli@7.2.0
+npm install --save-dev @babel/plugin-proposal-class-properties@7.2.1
+npm install --save-dev @babel/plugin-proposal-object-rest-spread@7.2.0
+npm install --save-dev @babel/preset-env@7.2.0
 npm install --save-dev @babel/preset-typescript@7.1.0
 ```
 
@@ -48,13 +48,13 @@ or make sure that you add the appropriate `"devDependencies"` entries to your `p
 
 ```json
 "devDependencies": {
-    "@babel/cli": "^7.1.2",
-    "@babel/core": "^7.1.2",
-    "@babel/plugin-proposal-class-properties": "^7.1.0",
-    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
-    "@babel/preset-env": "^7.1.0",
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.0",
+    "@babel/plugin-proposal-class-properties": "^7.2.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
     "@babel/preset-typescript": "^7.1.0",
-    "typescript": "^3.1.5"
+    "typescript": "^3.2.2"
 }
 ```
 
@@ -193,7 +193,7 @@ npm run bundle
 ### Install your dependencies
 
 ```sh
-npm install --save-dev rollup rollup-plugin-babel@latest
+npm install --save-dev rollup rollup-plugin-babel@latest rollup-plugin-node-resolve rollup-plugin-commonjs
 ```
 
 ### Create a `rollup.config.js`
@@ -201,20 +201,51 @@ npm install --save-dev rollup rollup-plugin-babel@latest
 Create a `rollup.config.js` at the root of this project with the following contents:
 
 ```js
+import commonjs from 'rollup-plugin-commonjs';
+import resolve from 'rollup-plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
 import pkg from './package.json';
 
+const extensions = [
+  '.js', '.jsx', '.ts', '.tsx',
+];
+
+const name = 'RollupTypeScriptBabel';
+
 export default {
-    input: './src/index.ts',
-    plugins: [
-        babel({ extensions: ['.ts', '.tsx'], exclude: ['dist/**', 'node_modules/**'] }),
-    ],
-    output: [
-        { file: pkg.main, format: 'cjs' },
-        { file: pkg.module, format: 'es' },
-        { file: pkg.browser, format: 'iife', name: 'RollupTypeScriptBabel' },
-    ],
+  input: './src/index.ts',
+
+  // Specify here external modules which you don't want to include in your bundle (for instance: 'lodash', 'moment' etc.)
+  // https://rollupjs.org/guide/en#external-e-external
+  external: [],
+
+  plugins: [
+    // Allows node_modules resolution
+    resolve({ extensions }),
+
+    // Allow bundling cjs modules. Rollup doesn't understand cjs
+    commonjs(),
+
+    // Compile TypeScript/JavaScript files
+    babel({ extensions, include: ['src/**/*'] }),
+  ],
+
+  output: [{
+    file: pkg.main,
+    format: 'cjs',
+  }, {
+    file: pkg.module,
+    format: 'es',
+  }, {
+    file: pkg.browser,
+    format: 'iife',
+    name,
+
+    // https://rollupjs.org/guide/en#output-globals-g-globals
+    globals: {},
+  }],
 };
+
 ```
 
 ### Create a build task
