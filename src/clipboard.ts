@@ -1,6 +1,7 @@
 import { exec } from 'child_process';
 import { promisify } from 'util';
 import clipboardy from 'clipboardy';
+import { focusWindowById } from './utils';
 
 const cli = promisify(exec);
 
@@ -15,14 +16,23 @@ export function copy(input:any = ''): void {
 }
 
 // simulate ctrl+v keypress
-export function paste(): void {
-    exec('xdotool key ctrl+shift+v');
+export async function paste(): Promise<void> {
+    try {
+        cli('xdotool key ctrl+shift+v');
+    } catch (err) {
+        console.error(err);
+        process.exit(2);
+    }
 }
 
 // copy and paste content and restore previous clipboard
-export function copyPaste(content: any): void {
+export async function copyPaste(content: any, windowId?: string | number): Promise<void> {
     let originalClipboard = clipboardy.readSync();
 
+    if(windowId) {
+        await focusWindowById(windowId);
+    }
+    
     copy(content);
     paste();
 
@@ -32,6 +42,14 @@ export function copyPaste(content: any): void {
     }, 500);
 }
 
-export async function getContent(): Promise<string> {
-    return (await cli('xclip -o')).stdout
+export async function getContent(): Promise<string|undefined> {
+    try {
+        let content = (await cli('xclip -o')).stdout;
+
+        return content;
+    } catch (err) {
+        console.error(err);
+
+        process.exit(3)
+    }
 }

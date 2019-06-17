@@ -2,6 +2,7 @@ import globalDirectories from 'global-dirs';
 import fg from 'fast-glob';
 import fs from 'fs-extra';
 import requireg from 'requireg';
+import colors from 'colors';
 
 interface plugin {
     name: string;
@@ -10,32 +11,56 @@ interface plugin {
     packageName: string[];
 }
 
-export const findPlugins = (cb: Function): void => {
-    fg(globalDirectories.npm.packages + '/**/package.json', {
-        deep: 1
-    })
-        .then(entries => {
-            let plugins: plugin[] = [];
+const unique = (value: any, index: number, self: any) => {
+    return self.indexOf(value) === index;
+};
 
-            for (let entry of entries) {
-                const packageObj = fs.readJsonSync(String(entry));
-                if (packageObj.rofiking) {
-                    try {
-                        let mod = requireg(packageObj.name);
+async function findPlugins(entries: string[]): Promise<plugin[]> {
+    let plugins: plugin[] = [];
 
-                        plugins.push(Object.assign({}, mod.register.attributes, {
-                            packageName: packageObj.name
-                        }));
-                    } catch (err) {
-                        console.error(err);
-                    }
-                } 
+    for (let entry of entries) {
+        const packageObj = fs.readJsonSync(String(entry));
+        if (packageObj.rofiking) {
+            try {
+                console.log(`${packageObj.name}@${colors.green(packageObj.version)}`);
+                let mod = requireg(packageObj.name);
+
+                plugins.push(
+                    Object.assign({}, mod.register.attributes, {
+                        packageName: packageObj.name
+                    })
+                );
+            } catch (err) {
+                console.log(colors.red('Error loading: ' + packageObj.name));
             }
+        }
+    }
 
-            cb(null, plugins);
-        })
-        .catch(err => {
-            console.log(err)
-            cb(err, []);
-        });
+    return plugins;
+}
+
+async function getInstalledPlugins() {
+    let npmPlugins = await findPlugins(await getNpmEntries());
+    let yarnPlugins = await findPlugins(await getYarnEntires());
+
+    return npmPlugins.concat(yarnPlugins).filter(unique);
+}
+
+async function getNpmEntries() {
+    let glob = globalDirectories.npm.packages + '/**/package.json';
+    let entries: string[] = await fg(glob, { deep: 1 });
+
+    return entries;
+}
+
+async function getYarnEntires() {
+    let glob = globalDirectories.yarn.packages + '/**/package.json';
+    let entries: string[] = await fg(glob, { deep: 1 });
+
+    return entries;
+}
+
+export const getPlugins = async (cb: Function): Promise<void> => {
+    let plugins = await getInstalledPlugins();
+    cb(null, plugins);
 };

@@ -1,0 +1,16 @@
+{
+  "name": "rofiking-to-case",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "rofiking": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "to-case": "^2.0.0"
+  }
+}
