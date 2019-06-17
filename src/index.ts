@@ -63,16 +63,15 @@ export class RofiJS {
         if (name && name.packageName) {
             try {
                 let plugin = requireg(name.packageName);
+
                 plugin.register(async (list: any[], settings: any) => {
 
                     let actions = list.map(script => script.name);
-    
                     let action_menu = new Menu(actions, Object.assign({}, {
                         matching: 'normal'
                     }, settings));
     
                     let script = JSON.parse(await action_menu.open());
-    
                     let action = list.find(a => a.name.trim() === script.stdout.trim());
     
                     if(action && action.run) {

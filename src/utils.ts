@@ -3,8 +3,6 @@ import kindOf from 'kind-of';
 import { copyPaste, getContent } from './clipboard';
 import { exec } from 'child_process';
 import { promisify } from 'util';
-import { createBrotliCompress } from 'zlib';
-import { doesNotReject } from 'assert';
 
 const cli = promisify(exec);
 
@@ -38,14 +36,16 @@ function commandsExist (commands: string[]) {
     return promises;
 }
 
-async function handleValueType(value: any, done: (value: any) => Promise<any>) {
+async function handleValueType(value: any, done?: any) {
     let kind = kindOf(value);
 
     let x = await getContent();
 
     // paste only strings, numbers and booleans
     if (~['string', 'number', 'boolean'].indexOf(kind)) {
-        return done(value);
+        if(kindOf(done) === 'function') {
+            return done(value)
+        };
     }
 
     if(kind === 'undefined') {
@@ -53,26 +53,26 @@ async function handleValueType(value: any, done: (value: any) => Promise<any>) {
     }
 
     if(kind === 'map') {
-        handleValueType(value.entries(), handleValueType);
+        handleValueType(value.entries(), done);
         return;
     }
 
     if(kind === 'mapiterator') {
-        handleValueType(Array.from(value), handleValueType);
+        handleValueType(Array.from(value), done);
         return;
     }
 
     if (value instanceof Promise) {
-        handleValueType(await value, handleValueType);
+        handleValueType(await value, done);
         return;
     }
 
     if (kind === 'function') {
         let result = value(x, (err: any, data: any) => {
-            handleValueType(data, handleValueType);
+            handleValueType(data, done);
         });
 
-        handleValueType(result, handleValueType);
+        handleValueType(result, done);
         return;
     }
 
@@ -81,18 +81,13 @@ async function handleValueType(value: any, done: (value: any) => Promise<any>) {
         return;
     }
 
-    if(kind === 'error') {
-        // handle error
-        // TODO: add entry in config to handle this;
-    }
-
     if(kind === 'object') {
-        handleValueType(JSON.stringify(value).trim(), handleValueType);
+        handleValueType(JSON.stringify(value).trim(), done);
         return
     }
 
     // otherwise turn to string
-    handleValueType(String(value).trim(), handleValueType);
+    handleValueType(String(value).trim(), done);
 }
 
 export {
