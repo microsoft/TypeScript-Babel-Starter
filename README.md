@@ -35,26 +35,26 @@ npm run type-check:watch
 Either run the following:
 
 ```sh
-npm install --save-dev typescript@3.2.2
-npm install --save-dev @babel/core@7.2.0
-npm install --save-dev @babel/cli@7.2.0
-npm install --save-dev @babel/plugin-proposal-class-properties@7.2.1
-npm install --save-dev @babel/plugin-proposal-object-rest-spread@7.2.0
-npm install --save-dev @babel/preset-env@7.2.0
-npm install --save-dev @babel/preset-typescript@7.1.0
+npm install --save-dev typescript@3.3.3
+npm install --save-dev @babel/core@7.4.0
+npm install --save-dev @babel/cli@7.2.3
+npm install --save-dev @babel/plugin-proposal-class-properties@7.4.0
+npm install --save-dev @babel/plugin-proposal-object-rest-spread@7.4.0
+npm install --save-dev @babel/preset-env@7.4.1
+npm install --save-dev @babel/preset-typescript@7.3.3
 ```
 
 or make sure that you add the appropriate `"devDependencies"` entries to your `package.json` and run `npm install`:
 
 ```json
 "devDependencies": {
-    "@babel/cli": "^7.2.0",
-    "@babel/core": "^7.2.0",
-    "@babel/plugin-proposal-class-properties": "^7.2.1",
-    "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
-    "@babel/preset-env": "^7.2.0",
-    "@babel/preset-typescript": "^7.1.0",
-    "typescript": "^3.2.2"
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
+    "@babel/preset-env": "^7.4.1",
+    "@babel/preset-typescript": "^7.3.2",
+    "typescript": "^3.3.3"
 }
 ```
 
