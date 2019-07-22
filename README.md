@@ -46,7 +46,7 @@ or make sure that you add the appropriate `"devDependencies"` entries to your `p
     "@babel/core": "^7.4.0",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
-    "@babel/plugin-proposal-numeric-separator": "^7.4.0",
+    "@babel/plugin-proposal-numeric-separator": "^7.2.0",
     "@babel/preset-env": "^7.4.1",
     "@babel/preset-typescript": "^7.3.2",
     "typescript": "^3.3.3"
