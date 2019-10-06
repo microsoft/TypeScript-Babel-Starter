@@ -35,7 +35,7 @@ npm run type-check:watch
 Either run the following:
 
 ```sh
-npm install --save-dev typescript @babel/core @babel/cli @babel/plugin-proposal-class-properties @babel/plugin-proposal-object-rest-spread @babel/preset-env @babel/preset-typescript @babel/plugin-proposal-numeric-separator
+npm install --save-dev typescript @babel/core @babel/cli @babel/plugin-proposal-class-properties @babel/plugin-proposal-object-rest-spread @babel/preset-env @babel/preset-typescript
 ```
 
 or make sure that you add the appropriate `"devDependencies"` entries to your `package.json` and run `npm install`:
@@ -45,7 +45,6 @@ or make sure that you add the appropriate `"devDependencies"` entries to your `p
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/plugin-proposal-numeric-separator": "^7.2.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-typescript": "^7.3.3",
@@ -75,7 +74,6 @@ Then copy the `.babelrc` in this repo, or the below:
         "@babel/typescript"
     ],
     "plugins": [
-        "@babel/plugin-proposal-numeric-separator",
         "@babel/proposal-class-properties",
         "@babel/proposal-object-rest-spread"
     ]
