@@ -70,14 +70,12 @@ Then copy the `.babelrc` in this repo, or the below:
 
 ```json
 {
-    "presets": [
-        "@babel/env",
-        "@babel/typescript"
-    ],
-    "plugins": [
-        "@babel/proposal-class-properties",
-        "@babel/proposal-object-rest-spread"
-    ]
+  "presets": ["@babel/env", "@babel/typescript"],
+  "plugins": [
+    "@babel/plugin-proposal-numeric-separator",
+    "@babel/proposal-class-properties",
+    "@babel/proposal-object-rest-spread"
+  ]
 }
 ```
 
