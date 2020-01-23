@@ -35,20 +35,19 @@ npm run type-check:watch
 Either run the following:
 
 ```sh
-npm install --save-dev typescript @babel/core @babel/cli @babel/plugin-proposal-class-properties @babel/plugin-proposal-object-rest-spread @babel/preset-env @babel/preset-typescript
+npm install --save-dev typescript @babel/core @babel/cli @babel/plugin-proposal-class-properties @babel/preset-env @babel/preset-typescript
 ```
 
 or make sure that you add the appropriate `"devDependencies"` entries to your `package.json` and run `npm install`:
 
 ```json
 "devDependencies": {
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/preset-typescript": "^7.3.3",
-    "typescript": "^3.5.3"
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.3",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-typescript": "^7.8.3",
+    "typescript": "^3.7.5"
 }
 ```
 
@@ -74,8 +73,7 @@ Then copy the `.babelrc` in this repo, or the below:
         "@babel/typescript"
     ],
     "plugins": [
-        "@babel/proposal-class-properties",
-        "@babel/proposal-object-rest-spread"
+        "@babel/proposal-class-properties"
     ]
 }
 ```
@@ -105,7 +103,7 @@ Install the [@babel/preset-react](https://www.npmjs.com/package/@babel/preset-re
 
 ```sh
 npm install --save react react-dom @types/react @types/react-dom
-npm install --save-dev @babel/preset-react@7.0.0
+npm install --save-dev @babel/preset-react
 ```
 
 ### Update `.babelrc`
@@ -133,7 +131,7 @@ export let z = <div>Hello world!</div>;
 ### Install your dependencies
 
 ```sh
-npm install --save-dev webpack webpack-cli babel-loader@8.0.4
+npm install --save-dev webpack webpack-cli babel-loader
 ```
 
 ### Create a `webpack.config.js`
@@ -187,7 +185,7 @@ npm run bundle
 ### Install your dependencies
 
 ```sh
-npm install --save-dev rollup rollup-plugin-babel@latest rollup-plugin-node-resolve rollup-plugin-commonjs
+npm install --save-dev rollup rollup-plugin-babel rollup-plugin-node-resolve rollup-plugin-commonjs
 ```
 
 ### Create a `rollup.config.js`
