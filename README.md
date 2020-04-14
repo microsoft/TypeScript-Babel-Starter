@@ -193,8 +193,8 @@ npm install --save-dev rollup rollup-plugin-babel @rollup/plugin-node-resolve @r
 Create a `rollup.config.js` at the root of this project with the following contents:
 
 ```js
-import commonjs from 'rollup-plugin-commonjs';
-import resolve from 'rollup-plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
 import pkg from './package.json';
 
