@@ -185,7 +185,7 @@ npm run bundle
 ### Install your dependencies
 
 ```sh
-npm install --save-dev rollup rollup-plugin-babel rollup-plugin-node-resolve rollup-plugin-commonjs
+npm install --save-dev rollup rollup-plugin-babel @rollup/plugin-node-resolve @rollup/plugin-commonjs
 ```
 
 ### Create a `rollup.config.js`
