@@ -255,3 +255,29 @@ to the `scripts` section in your `package.json`.
 ```sh
 npm run bundle
 ```
+
+## Using NodeJS
+
+> Full example available [**here**](https://github.com/it-efrem/NodeJS-TypeScript-Babel)
+
+### Install your dependencies
+
+```sh
+npm install --save-dev @babel/core @babel/node @babel/plugin-proposal-class-properties @babel/preset-env @babel/preset-typescript typescript
+```
+
+### Create a start task
+
+Add
+
+```json
+"start": "babel-node -x \".ts\" src/index.ts"
+```
+
+to the `scripts` section in your `package.json`.
+
+### Run the start task
+
+```sh
+npm run start
+```
