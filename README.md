@@ -69,11 +69,11 @@ Then copy the `.babelrc` in this repo, or the below:
 ```json
 {
     "presets": [
-        "@babel/env",
-        "@babel/typescript"
+      "@babel/preset-env",
+      "@babel/preset-typescript"
     ],
     "plugins": [
-        "@babel/proposal-class-properties"
+      "@babel/plugin-proposal-class-properties"
     ]
 }
 ```
