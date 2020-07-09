@@ -281,3 +281,23 @@ to the `scripts` section in your `package.json`.
 ```sh
 npm run start
 ```
+
+
+### Pull changes from this starter kit into your project
+
+If you are starting a new project:
+```
+git clone git@github.com:microsoft/TypeScript-Babel-Starter.git my-app
+cd my-app
+git remote rename origin TypeScript-Babel-Starter
+git remote add origin git@github.com:your-company/your-project.git
+git pull TypeScript-Babel-Starter master
+```
+
+If you have an existing project, you'll need for force merge unrelated histories. (untested)
+```
+git remote add TypeScript-Babel-Starter git@github.com:microsoft/TypeScript-Babel-Starter.git
+git fetch TypeScript-Babel-Starter
+git checkout -b TypeScript-Babel-Starter TypeScript-Babel-Starter/master
+git merge TypeScript-Babel-Starter --allow-unrelated-histories
+```
