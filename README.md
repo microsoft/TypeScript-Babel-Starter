@@ -42,12 +42,11 @@ or make sure that you add the appropriate `"devDependencies"` entries to your `p
 
 ```json
 "devDependencies": {
-    "@babel/cli": "^7.8.3",
-    "@babel/core": "^7.8.3",
-    "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/preset-env": "^7.8.3",
-    "@babel/preset-typescript": "^7.8.3",
-    "typescript": "^3.7.5"
+  "@babel/cli": "^7.15.7",
+  "@babel/core": "^7.15.5",
+  "@babel/preset-env": "^7.15.6",
+  "@babel/preset-typescript": "^7.15.0",
+  "typescript": "^3.9.10"
 }
 ```
 
@@ -71,9 +70,6 @@ Then copy the `.babelrc` in this repo, or the below:
     "presets": [
       "@babel/preset-env",
       "@babel/preset-typescript"
-    ],
-    "plugins": [
-      "@babel/plugin-proposal-class-properties"
     ]
 }
 ```
